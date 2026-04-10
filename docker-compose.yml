@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: bank_db
+    restart: always
+    environment:
+      POSTGRES_USER: vkr_user
+      POSTGRES_PASSWORD: vkr_password
+      POSTGRES_DB: bank_stability
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: bank_app
+    depends_on:
+      - db
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./raw:/app/raw  # Чтобы скачанные файлы сохранялись у тебя на диске
+    environment:
+      - DATABASE_URL=postgresql://vkr_user:vkr_password@db:5432/bank_stability
+
+volumes:
+  postgres_data:
