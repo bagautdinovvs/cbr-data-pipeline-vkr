@@ -34,4 +34,4 @@ docker exec -it bank_app python run_pipeline.py
 После запуска дашборд будет доступен по адресу: http://localhost:8501
 
 ## Возможные проблемы
-Есть вероятность, что данные на сайте ЦБ РФ отсутствуют или не парсятся. Альтернатива - ручная загрузка по ссылке https://www.cbr.ru/banking_sector/otchetnost-kreditnykh-organizaciy/ и сохранение разархивированных папок в виде подпапки в raw
+Есть вероятность, что данные на сайте ЦБ РФ отсутствуют или не парсятся. Альтернатива - ручная загрузка по ссылке https://www.cbr.ru/banking_sector/otchetnost-kreditnykh-organizaciy/ и сохранение разархивированных папок в виде подпапкок в raw
