@@ -23,14 +23,21 @@
 
 ### 2. Запуск проекта
 Склонируйте репозиторий и запустите контейнеры (через терминал):
-- git clone [https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git](https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git)
-- cd cbr-data-pipeline-vkr
-- docker-compose up -d --build
+```
+git clone https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git
+cd cbr-data-pipeline-vkr
+docker-compose up -d --build
+```
+**Важно**: запускайте команды по очереди или разделите символами &&
+```
+git clone https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git && cd cbr-data-pipeline-vkr && docker-compose up -d --build
+```
 
 ### 3. Обновление данных
 Для запуска полного цикла обработки данных (Download -> Load -> Recalc -> Forecast) выполните:
-- docker exec -it bank_app python run_pipeline.py
-Дождитесь сообщения о завершении процесса (это может занять 1-2 минуты).
+```
+docker exec -it bank_app python run_pipeline.py
+```
 
 ### 4. Просмотр результатов
 После запуска дашборд будет доступен по адресу: http://localhost:8501
