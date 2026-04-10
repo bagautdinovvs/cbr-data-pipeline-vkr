@@ -21,14 +21,14 @@
 Установите [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 ### 2. Запуск проекта
-Склонируйте репозиторий и запустите контейнеры:
-git clone [https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git](https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git)
-cd cbr-data-pipeline-vkr
-docker-compose up -d --build
+Склонируйте репозиторий и запустите контейнеры (терминал/vs code/jupyter и тп):
+- git clone [https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git](https://github.com/bagautdinovvs/cbr-data-pipeline-vkr.git)
+- cd cbr-data-pipeline-vkr
+- docker-compose up -d --build
 
 ### 3. Обновление данных
 Для запуска полного цикла обработки данных (Download -> Load -> Recalc -> Forecast) выполните:
-docker exec -it bank_app python run_pipeline.py
+- docker exec -it bank_app python run_pipeline.py
 
 ### 4. Просмотр результатов
 После запуска дашборд будет доступен по адресу: http://localhost:8501
